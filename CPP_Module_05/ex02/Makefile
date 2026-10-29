@@ -25,7 +25,7 @@ SRCS = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyReque
 INCLUDE = Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp  PresidentialPardonForm.hpp
 CC = c++
 RM = rm -f
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -MMD 
+CFLAGS = -Wall -Wextra -Werror -std=c++98 
 OBJS = ${SRCS:.cpp=.o}
 DEPS = ${SRCS:.cpp=.d}
 

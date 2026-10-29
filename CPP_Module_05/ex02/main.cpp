@@ -9,13 +9,13 @@
 
 int main()
 {
-    std::srand(std::time(0)); // Inicializamos rand una vez
+    std::srand(std::time(0));
 
     try
     {
-        Bureaucrat alice("Alice", 1);    // grado alto, puede firmar y ejecutar todo
-        Bureaucrat bob("Bob", 50);       // grado medio
-        Bureaucrat charlie("Charlie", 150); // grado bajo
+        Bureaucrat alice("Alice", 1);    // grade high
+        Bureaucrat bob("Bob", 50);       // grade medium
+        Bureaucrat charlie("Charlie", 150); // grade low
 
         ShrubberyCreationForm shrubForm("home");
         RobotomyRequestForm roboForm("Marvin");
@@ -27,22 +27,29 @@ int main()
         std::cout << pardonForm << std::endl;
 
         std::cout << "\n--- FIRMAR FORMULARIOS ---\n";
-        alice.signForm(pardonForm);  // debería funcionar
-        bob.signForm(shrubForm);     // debería funcionar
-        charlie.signForm(roboForm);  // debería fallar
+        alice.signForm(pardonForm);  // ok
+        bob.signForm(shrubForm);     // ok
+        charlie.signForm(roboForm);  // F
         
 
         std::cout << "\n--- EJECUTAR FORMULARIOS ---\n";
-        alice.executeForm(shrubForm);   // ejecuta también
-        bob.executeForm(shrubForm);     // ejecuta: suficiente grado
-        charlie.executeForm(shrubForm); // falla: grado muy bajo
+        alice.executeForm(shrubForm);   // ok
+        bob.executeForm(shrubForm);     // ok
+        charlie.executeForm(shrubForm); // F
         
-        
+        std::cout << "\n";
 
-        alice.executeForm(roboForm);    // ejecuta: aunque no firmado por Alice (si firma primero)
-        bob.executeForm(roboForm);      // falla si no firmado
+        alice.executeForm(roboForm);    //ok if change people
+        bob.executeForm(roboForm);      //F
+        charlie.executeForm(roboForm);  //F
 
-        alice.executeForm(pardonForm);  // ejecuta correctamente
+        std::cout << "\n";
+
+        alice.executeForm(pardonForm);  // ok
+        bob.executeForm(pardonForm); // F
+        charlie.executeForm(pardonForm); //F
+
+
     }
     catch (std::exception & e)
     {

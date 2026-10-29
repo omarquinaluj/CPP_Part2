@@ -16,20 +16,25 @@ int main()
 	Bureaucrat supervisor("Supervisor", 1);
 	Bureaucrat francis("Francis", 25);
 
+	std::cout << "\n";
+
 	AForm *shrub = someIntern.makeForm("shrubbery", "home");
 	shrub->beSigned(supervisor);
 	shrub->execute(francis);
 
+    std::cout << "\n";
+
 	AForm *pres = someIntern.makeForm("presidential", "Francis");
 	supervisor.signForm(*pres);
 	pres->execute(supervisor);
+ 
+	std::cout << "\n";
 
 	AForm *robot = someIntern.makeForm("robotomy", "Bender");
 	robot->beSigned(supervisor);
 	robot->execute(francis);
 	francis.executeForm(*robot);
 	francis.executeForm(*robot);
-
 	try
 	{
 		AForm *fake = someIntern.makeForm("fake request", "Bender");

@@ -15,7 +15,7 @@ private:
     const int         gradeToSign;   
     const int         gradeToExecute;
 
-    Form(); // prohibido
+    Form(); // dont access a from
 
 public:
     Form(const std::string& name, int gradeToSign, int gradeToExecute);
