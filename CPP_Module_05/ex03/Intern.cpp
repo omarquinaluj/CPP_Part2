@@ -11,7 +11,7 @@ AForm* Intern::makeForm(std::string const & s1, std::string const& s2)
 	res = NULL;
 	int i;
 	i = -1;
-	while (++i < 4)
+	while (++i < 3)
 		if (s1 == array[i])
 			break ;
 	switch (i)

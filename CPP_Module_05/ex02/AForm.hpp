@@ -16,7 +16,7 @@ class AForm
         const int         gradeToExecute;
     protected:
         AForm();
-        virtual void _execute(const Bureaucrat& executor) const = 0;
+        virtual void _execute(const Bureaucrat& executor) const = 0; //class abstract
 
     public:
         AForm(const std::string& name, int gradeToSign, int gradeToExecute);

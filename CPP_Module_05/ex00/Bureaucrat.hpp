@@ -13,7 +13,7 @@ class Bureaucrat
         void    checkGrade(int grade) const;
     public:
         //Canonical form
-         Bureaucrat(const std::string& name, int grade);
+        Bureaucrat(const std::string& name, int grade);
         Bureaucrat(const Bureaucrat& other);
         Bureaucrat& operator=(const Bureaucrat& other);
         ~Bureaucrat();

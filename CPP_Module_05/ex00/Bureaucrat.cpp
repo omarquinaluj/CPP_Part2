@@ -1,8 +1,7 @@
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
 
 class Form;
-//Constructor
+/
 
 Bureaucrat::Bureaucrat(const std::string& name, int grade)
     : name(name)
